@@ -9,18 +9,17 @@
 </head>
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow" style="width: 100%; max-width: 400px">
-        <h3 class="text-center mb-4">Sistema Jit</h3>
-    <form action="validar.php" method="POST">
-        <div class="mb-3">
-            <label for="usuario" class="form-label">Usuario</label>
-            <input type="text" class="form-control" id="usuario" name="usuario" required>
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña</label>
-            <input type="text" class="form-control" id="password" name="password" require>
-        </div>
-        <button type="sumit" class="btn btn-primary w-100">Inciar Sesión</button>
-    </form>
+        <h3 class="text-center mb-4">Buffer Jit</h3>
+        <form action="validar.php" method="POST">
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuario</label>
+                <input type="text" class="form-control form-control-lg" id="usuario" name="usuario" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control form-control-lg" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100 shadow-sm">Iniciar Sesión</button>
+        </form>
     </div>
 </body>
-</html>
