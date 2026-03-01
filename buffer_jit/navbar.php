@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light stick-top">
     <div class="container">
         <a class="navbar-brand" href="gestion.php">Buffer Jit</a>
         
