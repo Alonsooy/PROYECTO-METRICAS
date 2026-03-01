@@ -31,7 +31,33 @@ body {
     letter-spacing: -0.5px;
     color: #1a202c !important;
 }
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
 
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #2ecc71; 
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-item {
+    transition: transform 0.2s ease;
+}
+
+.nav-item:hover {
+    transform: translateY(-2px);
+}
 
 .btn {
     border-radius: 8px !important;
@@ -61,4 +87,28 @@ body {
     border-radius: 6px !important;
     font-weight: 600;
     text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.btn {
+    transition: all 0.3s ease !important; 
+    animation: fadeIn 0.5s ease-out; 
+}
+
+.btn:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15) !important;
+    filter: brightness(1.05); 
+}
+
+.btn:active {
+    transform: translateY(0); 
 }
