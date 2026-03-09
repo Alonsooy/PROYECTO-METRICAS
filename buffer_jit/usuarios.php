@@ -1,3 +1,7 @@
+<?php
+include "Contents/Class/Usuarios.php";
+$usuario = new Usuarios();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios - Buffer Jit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Contents/CSS/style.css">
 </head>
 <body class="bg-light">
-    <?php include 'navbar.php'; ?>
+    <?php include 'Contents/Views/navbar.php'; ?>
 
     <div class="container mt-5">
         <h2 class="mb-4 text-center">Gestión de Usuarios</h2>
@@ -27,14 +31,14 @@
             <div class="tab-pane fade show active" id="registro">
                 <div class="d-flex justify-content-center">
                     <div class="card p-4 shadow-sm border-0" style="width: 100%; max-width: 500px">
-                        <form action="guardar_usuario.php" method="POST">
+                        <form method="POST">
                             <div class="mb-3">
                                 <label class="form-label">Nombre</label>
                                 <input type="text" class="form-control form-control-lg" name="nombre" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Usuario</label>
-                                <input type="text" class="form-control form-control-lg" name="usuario" required>
+                                <input type="text" class="form-control form-control-lg" name="correo" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Contraseña</label>
@@ -43,8 +47,8 @@
                             <div class="mb-3">
                                 <label class="form-label">Rol</label>
                                 <select class="form-select form-select-lg" name="rol">
-                                    <option value="admin">Administrador</option>
-                                    <option value="operador">Operador</option>
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Operador</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-success w-100 shadow-sm">Registrar Usuario</button>
@@ -60,18 +64,16 @@
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
-                                    <th>Usuario</th>
+                                    <th>NOMBRE_USUARIO</th>
                                     <th>Rol</th>
-                                    <th>Acciones</th>
+                                    <th>Correo</th>
+                                    <th>Telefono</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Héctor</td>
-                                    <td>hector_admin</td>
-                                    <td><span class="badge bg-info text-dark">Admin</span></td>
-                                    <td><button class="btn btn-sm btn-outline-danger">Eliminar</button></td>
-                                </tr>
+                               <?= $usuario->ObtenerUsuarios($mysqli);?>
                             </tbody>
                         </table>
                     </div>
@@ -81,4 +83,4 @@
         </div>
     </div>
 
-    <?php include 'footer.php'; ?>
+    <?php include 'Contents/Views/footer.php'; ?>

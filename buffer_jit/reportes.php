@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard- Buffer JIt</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Contents/CSS/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-    <?php include 'navbar.php'; ?>
+    <?php include 'Contents/Views/navbar.php'; ?>
     
     <div class="container mt-5">
         <h2 class="mb-5 text-center">Estado del Inventario de Seguridad</h2>
@@ -47,4 +47,4 @@
         </div>
     </div>
 
-    <?php include 'footer.php'; ?>
+    <?php include 'Contents/Views/footer.php'; ?>

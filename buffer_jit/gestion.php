@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión - Buffer Jit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="Contents/CSS/style.css">
 </head>
 <body class="bg-light">
-    <?php include 'navbar.php'; ?>
+    <?php include 'Contents/Views/navbar.php'; ?>
     
     <div class="container mt-5">
         <div class="mb-5">
@@ -52,4 +52,4 @@
         </div>
     </div>
 
-    <?php include 'footer.php'; ?>
+    <?php include 'Contents/Views/footer.php'; ?>
