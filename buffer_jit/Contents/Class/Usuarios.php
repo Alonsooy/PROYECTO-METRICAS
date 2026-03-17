@@ -67,7 +67,7 @@ class Usuarios
     }
 
     function modificarUsuario(){
-
+    
     } 
 
     function eliminarUsuario(){
