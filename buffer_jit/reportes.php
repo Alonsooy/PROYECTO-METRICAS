@@ -1,3 +1,10 @@
+<?php
+session_start();
+include "Contents/Models/Usuarios.php";
+include "Contents/Functions/ControlAcceso.php";
+$usuario = new Usuarios();
+accesoRol("");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
