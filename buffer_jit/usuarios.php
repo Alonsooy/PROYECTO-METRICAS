@@ -1,6 +1,9 @@
 <?php
-include "Contents/Class/Usuarios.php";
+session_start();
+include "Contents/Models/Usuarios.php";
+include "Contents/Functions/ControlAcceso.php";
 $usuario = new Usuarios();
+accesoRol("ZonaUsuario");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,14 +34,19 @@ $usuario = new Usuarios();
             <div class="tab-pane fade show active" id="registro">
                 <div class="d-flex justify-content-center">
                     <div class="card p-4 shadow-sm border-0" style="width: 100%; max-width: 500px">
-                        <form method="POST">
+                        <form method="POST" action="Contents/Controllers/Controller_Users.php">
+                            <input type="hidden" name="accion" value="crear">
                             <div class="mb-3">
                                 <label class="form-label">Nombre</label>
                                 <input type="text" class="form-control form-control-lg" name="nombre" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Usuario</label>
-                                <input type="text" class="form-control form-control-lg" name="correo" required>
+                                <label class="form-label">Correo</label>
+                                <input type="email" class="form-control form-control-lg" name="correo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Telefono</label>
+                                <input type="tel" class="form-control form-control-lg" name="telefono" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Contraseña</label>
@@ -46,7 +54,8 @@ $usuario = new Usuarios();
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Rol</label>
-                                <select class="form-select form-select-lg" name="rol">
+                                <select class="form-select form-select-lg" name="rol" required>
+                                    <option value="" disabled selected>-----Rol-----</option>
                                     <option value="1">Administrador</option>
                                     <option value="2">Operador</option>
                                 </select>

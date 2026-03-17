@@ -1,3 +1,10 @@
+<?php
+session_start();
+include "Contents/Models/Productos.php";
+include "Contents/Functions/ControlAcceso.php";
+$producto = new Productos($mysqli);
+accesoRol("");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,25 +23,17 @@
             <div class="table-responsive">
                 <table class="table table-hover"> <thead>
                         <tr>
+                            <th>Id del producto</th>
+                            <th>Nombre del Producto</th>
+                            <th>Codigo del Producto</th>
+                            <th>Valor Unitario</th>
                             <th>Número de Piezas</th>
-                            <th>Descripción</th>
-                            <th>Cantidad en Stock</th>
                             <th>Clasificación</th>
+                            <th>Provedor</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>PZ-001</td>
-                            <td>Tornillo de Acero</td>
-                            <td>500</td>
-                            <td><span class="badge bg-success">A</span></td>
-                        </tr>
-                        <tr>
-                            <td>PZ-002</td>
-                            <td>Manija</td>
-                            <td>150</td>
-                            <td><span class="badge bg-warning text-dark">B</span></td>
-                        </tr>
+                        <?= $producto->obtenerProductos($mysqli);?>
                     </tbody>
                 </table>
             </div>

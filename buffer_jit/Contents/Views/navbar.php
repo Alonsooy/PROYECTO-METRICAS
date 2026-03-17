@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-light stick-top">
     <div class="container">
         <a class="navbar-brand" href="gestion.php">Buffer Jit</a>
@@ -17,6 +18,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="reportes.php">Reportes</a>
                 </li>
+                <LI>
+                   <?php
+                    if (isset($_SESSION['usuario'])) {
+                        echo '<a href="Contents/Functions/logout.php" class="btn btn-outline-danger fw-bold px-4">Cerrar sesión</a>';
+                    } ?> 
+                </LI>
             </ul>
         </div>
     </div>
