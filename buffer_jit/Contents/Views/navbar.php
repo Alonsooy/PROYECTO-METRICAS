@@ -10,7 +10,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="usuarios.php"> Registrar Usuarios</a>
+                    <?php 
+                    if ($_SESSION["rol"] === "ADMIN") { ?>
+                        <a class="nav-link" href="usuarios.php"> Registrar Usuarios</a>
+                    <?php } ?>                    
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="gestion.php">Gestión y Stock</a>
@@ -18,12 +21,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="reportes.php">Reportes</a>
                 </li>
-                <LI>
+                <li>
                    <?php
                     if (isset($_SESSION['usuario'])) {
                         echo '<a href="Contents/Functions/logout.php" class="btn btn-outline-danger fw-bold px-4">Cerrar sesión</a>';
                     } ?> 
-                </LI>
+                </li>
             </ul>
         </div>
     </div>

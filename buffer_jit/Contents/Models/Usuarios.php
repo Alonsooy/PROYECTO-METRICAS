@@ -19,7 +19,9 @@ class Usuarios
         }
 
         if ($cantidad > 0) {
-            while ($usuario = $result->fetch_assoc()) { ?>
+            while ($usuario = $result->fetch_assoc()) {
+                $nombreUsuario = $usuario['NOMBRE_USUARIO'];
+                ?>
                 <tr>
                     <td><?php echo htmlspecialchars($usuario['ID_USUARIO']); ?></td>
                     <td><?php echo htmlspecialchars($usuario['NOMBRE_USUARIO']); ?></td>

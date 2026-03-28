@@ -27,8 +27,21 @@ class Productos{
                     <td><?php echo htmlspecialchars($producto['STOCK_ACTUAL']); ?></td>
                     <td><?php echo htmlspecialchars($producto['CATEGORIA_ABCD']); ?></td>
                     <td><?php echo htmlspecialchars($producto['NOMBRE_PROVEEDOR']); ?></td>
-                </tr>
-                <?php }
+                    <?php 
+                            if ($_SESSION["rol"] === "ADMIN") { ?>
+                                <td>
+                                    <a href="EditarProducto.php" class="btn btn-success">Editar</a>
+                                </td>
+                                <td>
+                                    <form action="Contents/Controllers/Controller_Product.php" method="POST">
+                                        <input type="hidden" name="accion" value="eliminar">
+                                        <input type="hidden" name="id_producto"  id="id_producto" value="<?php echo $producto['ID_PRODUCTO'];?>">
+                                        <button class="btn btn-danger"  onclick="return confirm('¿Desea eliminar este Producto?');" type="submit">Eliminar</button>
+                                    </form>
+                                </td>
+                            <?php } ?> 
+                    </tr>
+                    <?php }
         } else {
             echo '<tr>
                  <td>No se encontraron usuarios</td>
@@ -43,5 +56,8 @@ class Productos{
             ELSE 'D'
         END AS CATEGORIA_ABCD
         */
+    }
+    function eliminarProducto($mysqli, $idProducto){
+        echo "Id producto: " . $idProducto;
     }
 }

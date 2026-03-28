@@ -30,6 +30,11 @@ accesoRol("");
                             <th>Número de Piezas</th>
                             <th>Clasificación</th>
                             <th>Provedor</th>
+                            <?php 
+                            if ($_SESSION["rol"] === "ADMIN") { ?>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                            <?php } ?>  
                         </tr>
                     </thead>
                     <tbody>
@@ -40,14 +45,19 @@ accesoRol("");
         </div>
 
         <h4 class="mb-4">Gestión de Stock</h4>
-        <div class="card p-4 shadow-sm" style="max-width: 400px">
-            <form action="cargar.php" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="archivo" class="form-label">Subir archivo Excel</label>
-                    <input type="file" class="form-control" id="archivo" name="archivo" required>
-                </div>
-                <button type="submit" class="btn btn-success w-100">Cargar Inventario</button>
-            </form>
+        <div class="row">
+            <div class="col-md-2">
+                <button>Agregar Producto</button>
+            </div>
+            <div class="card p-4 shadow-sm" style="max-width: 400px">
+                <form action="cargar.php" method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="archivo" class="form-label">Subir archivo Excel</label>
+                        <input type="file" class="form-control" id="archivo" name="archivo" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Cargar Inventario</button>
+                </form>
+            </div>
         </div>
     </div>
 
