@@ -1,6 +1,6 @@
 <?php
 function accesoRol($zona){
-    if (!isset( $_SESSION["usuario"], $_SESSION["rol"])){
+    if (!isset($_SESSION["usuario"], $_SESSION["rol"])){
         header("Location: index.php");
         exit();
     }
